@@ -7,13 +7,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   1. Download nodejs from https://nodejs.org/en/download/
   2. Install the desired verison
   3. Open a command prompt (or PowerShell), and enter the following:
-      node –v
+      # node –v
       The system should display the Node.js version installed on your system. You can do the same for NPM:
-      npm –v
+      # npm –v
   4. Install the Angular CLI using this command
-      npm install -g @angular/cli
+      # npm install -g @angular/cli
   5. clone this code in local  using this command
-     git clone 'url'
+      # git clone 'url'
      
 ## Development server
 
