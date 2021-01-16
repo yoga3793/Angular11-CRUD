@@ -1,0 +1,32 @@
+<h2></h2>
+<div style="position: relative;top: 20%;">
+
+  <div class="col-md-6 col-md-offset-2 m-auto login-form">
+    <h1>Login </h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email"
+          [ngClass]="(submitted && loginForm.controls.email.errors) ? 'form-control is-invalid':'form-control'"
+          formControlName="email" id="email">
+        <div *ngIf="submitted && loginForm.controls.email.errors" class="text-danger">
+          <small *ngIf="loginForm.controls.email.errors.required">Email is required</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password"
+          [ngClass]="(submitted && loginForm.controls.password.errors) ? 'form-control is-invalid':'form-control'"
+          formControlName="password" id="pwd">
+        <div *ngIf="submitted && loginForm.controls.password.errors" class="text-danger">
+          <small *ngIf="loginForm.controls.password.errors.required">Password is required</small>
+        </div>
+      </div>
+      <button class="btn  btn-primary btn-block">Login</button>
+      <div *ngIf="invalidLogin" class="error">
+        <div>Invalid credentials.</div>
+      </div>
+    </form>
+  </div>
+</div>

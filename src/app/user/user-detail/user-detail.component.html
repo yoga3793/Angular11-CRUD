@@ -1,0 +1,64 @@
+<div class="modal show" id="myModal" role="dialog" style="display: block;">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Update User</h4>
+        <button (click)="cancel()" type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" formControlName="email" placeholder="Email" name="email" [ngClass]="(submitted && userForm.controls.email.errors) ? 'form-control is-invalid':'form-control'" id="email">
+            <div *ngIf="submitted && userForm.controls.email.errors" class="text-danger">
+              <small *ngIf="userForm.controls.email.errors.required">Email is required</small>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input formControlName="firstName" placeholder="First Name" name="firstName" [ngClass]="(submitted && userForm.controls.firstName.errors) ? 'form-control is-invalid':'form-control'" id="firstName">
+            <div *ngIf="submitted && userForm.controls.firstName.errors" class="text-danger">
+              <small *ngIf="userForm.controls.firstName.errors.required">FirstName is required</small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input formControlName="lastName" placeholder="Last name" name="lastName" [ngClass]="(submitted && userForm.controls.lastName.errors) ? 'form-control is-invalid':'form-control'" id="lastName">
+            <div *ngIf="submitted && userForm.controls.lastName.errors" class="text-danger">
+              <small *ngIf="userForm.controls.lastName.errors.required">LastName is required</small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input formControlName="phone" placeholder="Phone" name="phone" [ngClass]="(submitted && userForm.controls.phone.errors) ? 'form-control is-invalid':'form-control'" id="phone">
+            <div *ngIf="submitted && userForm.controls.phone.errors" class="text-danger">
+              <small *ngIf="userForm.controls.phone.errors.required">Phone is required</small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input formControlName="password" placeholder="password" name="password" [ngClass]="(submitted && userForm.controls.password.errors) ? 'form-control is-invalid':'form-control'" id="phone">
+            <div *ngIf="submitted && userForm.controls.password.errors" class="text-danger">
+              <small *ngIf="userForm.controls.password.errors.required">Password is required</small>
+              <small *ngIf="userForm.controls.password.errors.minlength">Password must be at least six characters. </small>
+            </div>
+          </div>
+
+
+
+        </form>
+      </div>
+      <div class="modal-footer">        
+        <button (click)="cancel()" type="button" class="btn btn-secondary rounded-0" data-dismiss="modal">Cancel</button>
+        <button (click)="onSubmit(userForm)" class="btn btn-success rounded-0">Update</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="modal-backdrop fade show"></div>
