@@ -6,6 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
   1. Download nodejs from https://nodejs.org/en/download/
   2. Install the desired verison
+   2(i) Download and Install git from https://git-scm.com/downloads (if not installed already)
   3. Open a command prompt (or PowerShell), and enter the following:
       ## node –v
       The system should display the Node.js version installed on your system. You can do the same for NPM:
